@@ -55,15 +55,18 @@ public class Grid
     } // else
 
   } // isAlive 
-
+  
   public void iterate(Grid aGrid, Grid aGridCopy)
   {  
     for (int row = 0; row < height; row++)
     {
     for (int column = 0; column < width; column++)
       {
+	// Check if the current cell in the grid is alive or not.
         int typeOfCell = aGrid.isAlive(row, column, aGrid);
-        if (typeOfCell == 1)
+       
+	// Updates the cell in the copy of the grid accordingly.
+	if (typeOfCell == 1)
          aGridCopy.setCell(row, column, 1);
         else
          aGridCopy.setCell(row, column, 0);
